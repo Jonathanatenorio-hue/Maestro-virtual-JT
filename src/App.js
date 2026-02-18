@@ -88,7 +88,7 @@ function save(key, value) {
 }
 
 // ─── API Key Manager ─────────────────────────────────────
-function getApiKey() { return localStorage.getItem("ec_api_key") || ""; }
+function getApiKey() { const urlKey = new URLSearchParams(window.location.search).get("key"); if (urlKey) { localStorage.setItem("ec_api_key", urlKey); window.history.replaceState({}, "", window.location.pathname); } return localStorage.getItem("ec_api_key") || ""; }
 
 // ─── Rate Limiting ──────────────────────────────────────
 function getDailyLimit() { return parseInt(localStorage.getItem("ec_daily_limit") || "30"); }
