@@ -1,0 +1,8 @@
+{
+  "short_name": "Sales Academy",
+  "name": "ExpertCell Sales Academy",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#06090f",
+  "background_color": "#06090f"
+}
