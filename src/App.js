@@ -89,7 +89,6 @@ function save(key, value) {
 
 // ─── API Key Manager ─────────────────────────────────────
 function getApiKey() { return localStorage.getItem("ec_api_key") || ""; }
-function setApiKey(key) { localStorage.setItem("ec_api_key", key); }
 
 // ─── Rate Limiting ──────────────────────────────────────
 function getDailyLimit() { return parseInt(localStorage.getItem("ec_daily_limit") || "30"); }
@@ -840,7 +839,7 @@ function AgentProgress({ agentId, kb }) {
 // ══════════════════════════════════════════════════════════
 export default function App() {
   const [user, setUser] = useState(null);
-  const [agents, setAgents] = useState(load("ec_agents",[]));
+  const [agents, setAgents] = useState(load("ec_agents",[{id:"agent_1",name:"Prueba",pin:"1234",active:true}]));
   const [kb, setKb] = useState(load("ec_kb",DEFAULT_KB));
   const [tab, setTab] = useState("chat");
 
